@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+:where(
+    .menu li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)
+  ):not(.active, .btn):hover,
+:where(
+    .menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)
+  ):not(.active, .btn):hover {
+  background-color: transparent;
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn):active,
+.menu li > *:not(ul, .menu-title, details, .btn).active,
+.menu li > details > summary:active {
+  --tw-bg-opacity: 0;
+  background-color: none;
+  --tw-text-opacity: 0;
+  color: #23be0a;
+  border-radius: 8px;
+  border: 1px solid #23be0a;
+}
+.lineHeight {
+  line-height: 84px !important;
+}
+
+.table :where(thead, tbody) :where(tr:not(:last-child)),
+.table :where(thead, tbody) :where(tr:first-child:last-child) {
+  border-bottom-width: 0px;
+  --tw-border-opacity: 0;
+  border-bottom-color: none;
+}
+.table :where(th, td) {
+  padding-left: 0rem;
+}

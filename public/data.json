@@ -1,0 +1,80 @@
+[
+  {
+    "bookId": 1,
+    "bookName": "1984",
+    "author": "George Orwell",
+    "image": "https://i.ibb.co/4dtzt24/1984.jpg",
+    "review": "A haunting portrayal of a dystopian society where the government controls every aspect of its citizens' lives. Orwell's prophetic vision continues to resonate today.",
+    "totalPages": 328,
+    "rating": 4.5,
+    "category": "Fiction",
+    "tags": ["Dystopian", "Political", "Classic"],
+    "publisher": "Penguin Books",
+    "yearOfPublishing": 1949
+  },
+  {
+    "bookId": 2,
+    "bookName": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "image": "https://i.ibb.co/VCQXtbV/485px-To-Kill-a-Mockingbird-first-edition-cover.jpg",
+    "review": "A timeless classic that tackles profound themes such as racial injustice and moral growth through the eyes of a young girl in the American South.",
+    "totalPages": 336,
+    "rating": 4.8,
+    "category": "Fiction",
+    "tags": ["Coming of Age", "Legal Drama"],
+    "publisher": "J. B. Lippincott & Co.",
+    "yearOfPublishing": 1960
+  },
+  {
+    "bookId": 3,
+    "bookName": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "image": "https://i.ibb.co/JdSpcM0/The-Great-Gatsby-Cover-1925-Retouched.jpg",
+    "review": "A captivating exploration of the American Dream, filled with lavish parties, love affairs, and tragedy, set against the backdrop of the Roaring Twenties.",
+    "totalPages": 180,
+    "rating": 4.3,
+    "category": "Fiction",
+    "tags": ["Romance", "Jazz Age", "Classic"],
+    "publisher": "Charles Scribner's Sons",
+    "yearOfPublishing": 1925
+  },
+  {
+    "bookId": 4,
+    "bookName": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "image": "https://i.ibb.co/dDJTwSy/main-qimg-1a476ecc76e44800ce3223b043aa425d-lq.jpg",
+    "review": "A rebellious and introspective journey of a teenage boy, Holden Caulfield, as he navigates the complexities of adolescence and societal expectations.",
+    "totalPages": 224,
+    "rating": 4.1,
+    "category": "Fiction",
+    "tags": ["Coming of Age", "Cultural Critique"],
+    "publisher": "Little, Brown and Company",
+    "yearOfPublishing": 1951
+  },
+  {
+    "bookId": 5,
+    "bookName": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "image": "https://i.ibb.co/rdB9nxY/the-lord-of-the-rings-book-cover-768x995.jpg",
+    "review": "An epic tale of friendship, heroism, and the battle between good and evil, set in the enchanting world of Middle-earth.",
+    "totalPages": 1178,
+    "rating": 4.9,
+    "category": "Fantasy",
+    "tags": ["Adventure", "High Fantasy"],
+    "publisher": "George Allen & Unwin",
+    "yearOfPublishing": 1954
+  },
+  {
+    "bookId": 6,
+    "bookName": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "image": "https://i.ibb.co/g4cyV2B/9780241375273.jpg",
+    "review": "A timeless romance novel that explores societal expectations, class dynamics, and the complexities of love through the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
+    "totalPages": 432,
+    "rating": 4.7,
+    "category": "Romance",
+    "tags": ["Classic", "Regency Era"],
+    "publisher": "T. Egerton, Whitehall",
+    "yearOfPublishing": 1813
+  }
+]
