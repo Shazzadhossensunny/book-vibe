@@ -1,12 +1,34 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import Tag from "../Tag/Tag"
+import { getRead, saveBook, saveRead } from "../../utility/localStorage"
 
 
 export default function BookDetails() {
     const books = useLoaderData()
     const {bookId} = useParams()
-    const bookDetails = books.find((book) => book.bookId == bookId)
-    const {bookName, author, image, category, review, tags, totalPages, publisher, yearOfPublishing, rating} = bookDetails
+    const book = books.find((book) => book.bookId == bookId)
+    const {bookName, author, image, category, review, tags, totalPages, publisher, yearOfPublishing, rating} = book
+
+
+    const handleWishList = (book) => {
+        // saveBook(book)
+        let reads =  getRead();
+        const isExist = reads.find(r => r.bookId == book.bookId)
+        if(isExist){
+            saveRead(book)
+        }
+        else{
+            saveBook(book)
+        }
+    }
+    const handleRead = (book) => {
+        saveRead(book)
+
+     }
+
+
+
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-6 lg:mb-12 lg:mt-12 p-3">
         <div className="bg-[#1313130D] rounded-2xl p-8 lg:p-[74px]">
@@ -50,8 +72,8 @@ export default function BookDetails() {
            </div>
 
            <div className="space-x-4 mt-8">
-            <button className="py-2 lg:py-4 px-4 lg:px-7 rounded-lg border border-[#1313134d] text-[#131313] text-lg font-semibold">Read</button>
-            <button className="py-2 lg:py-4 px-4 lg:px-7 rounded-lg bg-[#50B1C9] text-white text-lg font-semibold">Wishlist</button>
+            <button onClick={()=>handleRead(book)} className="py-2 lg:py-4 px-4 lg:px-7 rounded-lg border border-[#1313134d] text-[#131313] text-lg font-semibold">Read</button>
+            <button onClick={()=>handleWishList(book)} className="py-2 lg:py-4 px-4 lg:px-7 rounded-lg bg-[#50B1C9] text-white text-lg font-semibold">Wishlist</button>
            </div>
 
         </div>
