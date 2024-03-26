@@ -14,6 +14,7 @@ export default function WishlistBook({ book }) {
     totalPages,
     category,
     rating,
+    bookId
   } = book;
   return (
     <div className="border border-[#13131399] rounded-2xl p-6 flex flex-col lg:flex-row gap-6 mt-8">
@@ -55,7 +56,7 @@ export default function WishlistBook({ book }) {
           <div className="badge bg-[#ffac3326] p-4 text-[#FFAC33]">
             Rating: {rating}
           </div>
-          <Link to={""} className="badge bg-[#23BE0A] p-4 text-white">
+          <Link to={`/bookDetails/${bookId}`} className="badge bg-[#23BE0A] p-4 text-white">
             View Details
           </Link>
         </div>
