@@ -12,6 +12,9 @@ import PagesToRead from './pages/PagesToRead/PagesToRead';
 import BookDetails from './components/BookDetaisl/BookDetails';
 import { ToastContainer } from 'react-toastify';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import AllBookPublisher from './pages/AllPublisher/AllBookPublisher';
+import Contact from './pages/Contact/Contact';
+
 
 
 const router = createBrowserRouter([
@@ -37,6 +40,15 @@ const router = createBrowserRouter([
         element: <BookDetails></BookDetails>,
         loader: () => fetch('../public/data.json')
       },
+      {
+        path: "/publisher",
+        element: <AllBookPublisher></AllBookPublisher>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
+      }
+
     ]
   },
 ]);

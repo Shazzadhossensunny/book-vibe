@@ -14,6 +14,8 @@ export default function Header() {
             <li><NavLink to={'/'} className='text-[#131313CC] font-normal text-lg'>Home</NavLink></li>
             <li><NavLink to={'/listedBooks'} className='text-[#131313CC] font-normal text-lg'>Listed Books</NavLink></li>
             <li><NavLink to={'/pagesToRead'} className='text-[#131313CC] font-normal text-lg'>Pages to Read</NavLink></li>
+            <li><NavLink to={'/publisher'} className='text-[#131313CC] font-normal text-lg'>Publishers</NavLink></li>
+            <li><NavLink to={'/contact'} className='text-[#131313CC] font-normal text-lg'>Contact Us</NavLink></li>
             </ul>
             </div>
             <Link to={'/'} className="text-[#131313] text-xl lg:text-3xl font-bold">Book Vibe</Link>
@@ -23,6 +25,8 @@ export default function Header() {
             <li><NavLink to={'/'} className='text-[#131313CC] font-normal text-lg'>Home</NavLink></li>
             <li><NavLink to={'/listedBooks'} className='text-[#131313CC] font-normal text-lg'>Listed Books</NavLink></li>
             <li><NavLink to={'/pagesToRead'} className='text-[#131313CC] font-normal text-lg'>Pages to Read</NavLink></li>
+            <li><NavLink to={'/publisher'} className='text-[#131313CC] font-normal text-lg'>Publishers</NavLink></li>
+            <li><NavLink to={'/contact'} className='text-[#131313CC] font-normal text-lg'>Contact Us</NavLink></li>
             </ul>
         </div>
         <div className="navbar-end space-x-1 lg:space-x-4">
