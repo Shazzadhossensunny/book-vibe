@@ -1,4 +1,5 @@
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const getBooks = () => {
     let books = []
     const storedBooks = localStorage.getItem('books')
@@ -14,11 +15,11 @@ export const saveBook = book => {
     let books = getBooks()
     const isExist = books.find(b => b.bookId == book.bookId)
     if(isExist){
-        return alert('Already Bookmarked!')
+        return toast.warn('This book is already added!')
     }
     books.push(book)
     localStorage.setItem('books', JSON.stringify(books))
-    alert('Blog Bookmarked Successfully!')
+    toast.success('Book added to Wishlist Successfully!')
 }
 // read
 export const getRead = () => {
@@ -36,9 +37,9 @@ export const saveRead = book => {
     let reads = getRead()
     const isExist = reads.find(r => r.bookId == book.bookId)
     if(isExist){
-        return alert('Already Bookmarked!')
+        return toast.warn('This book is already added!')
     }
     reads.push(book)
     localStorage.setItem('reads', JSON.stringify(reads))
-    alert('Blog Bookmarked Successfully!')
+    toast.success('Book added to Read List Successfully!')
 }
