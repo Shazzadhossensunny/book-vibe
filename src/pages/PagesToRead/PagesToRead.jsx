@@ -1,13 +1,24 @@
 import { ResponsiveContainer } from "recharts";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 import { getRead } from "../../utility/localStorage";
+import { useEffect, useState } from "react";
 const colors = ["#0085F6", "#00C29C", "#FBB929", "#FC8042", "#FB0100", "pink"];
 
-const value = getRead();
-const data = value.map((item) => ({
-  name: item.bookName,
-  uv: item.totalPages,
-}));
+export default function PagesToRead() {
+  const [data, setData] = useState([]);
+
+useEffect(() => {
+  const fetchData = async () => {
+    const value = await getRead();
+    const chartData = value.map((item) => ({
+      name: item.bookName,
+      uv: item.totalPages
+    }));
+    setData(chartData);
+  };
+
+  fetchData();
+}, []);
 
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
@@ -25,8 +36,6 @@ const TriangleBar = (props) => {
 
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
-
-export default function PagesToRead() {
   return (
     <div
       className="bg-[#13131308] rounded-2xl p-5 lg:p-12 mt-11"
