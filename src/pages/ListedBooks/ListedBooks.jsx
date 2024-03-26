@@ -25,10 +25,13 @@ export default function ListedBooks() {
           <summary className="m-1 btn">Sort By</summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li>
-              <a>Item 1</a>
+              <a>Rating</a>
             </li>
             <li>
-              <a>Item 2</a>
+              <a>Number of pages</a>
+            </li>
+            <li>
+              <a>Published year</a>
             </li>
           </ul>
         </details>
