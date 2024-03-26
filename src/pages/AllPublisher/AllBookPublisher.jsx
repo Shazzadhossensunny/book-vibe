@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa";
 export default function AllBookPublisher() {
   return (
-    <div className="mt-10 px-3 lg:px-0">
+    <div className="mt-10 px-3 lg:px-0 ">
       <div className="container mx-auto ">
         <div className="text-center">
           <h2 className="text-3xl text-[#131313] font-bold">
@@ -41,8 +41,7 @@ export default function AllBookPublisher() {
               SNX Publisher
             </h4>
             <p className="text-[#131313CC]">
-              Book publishing company SNX is a leading publisher of high-quality
-              books for readers...
+            Venuxx is a book publishing company that has been in business for over...
             </p>
             <div className="flex mt-6 space-x-4 text-2xl cursor-pointer">
               <FaFacebookF></FaFacebookF>
@@ -59,8 +58,7 @@ export default function AllBookPublisher() {
               SNX Publisher
             </h4>
             <p className="text-[#131313CC]">
-              Book publishing company SNX is a leading publisher of high-quality
-              books for readers...
+            XYZ is a book publishing company that has been in business for over...
             </p>
             <div className="flex mt-6 space-x-4 text-2xl cursor-pointer">
               <FaFacebookF></FaFacebookF>

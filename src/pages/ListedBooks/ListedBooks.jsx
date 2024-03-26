@@ -11,43 +11,38 @@ export default function ListedBooks() {
   const [displayJob, setDisplayJob] = useState([])
   const [displayWishlist, setDisplayWishlist] = useState([])
   useEffect(() => {
-    const storedBooks = getRead();
-    setReadBooks(storedBooks);
-    setDisplayJob(storedBooks)
+    const storedReadBooks = getRead();
+    setReadBooks(storedReadBooks);
+    setDisplayJob(storedReadBooks)
   }, []);
   useEffect(() => {
-    const storedBooks = getBooks();
-    setBooks(storedBooks);
-    setDisplayWishlist(storedBooks)
+    const storedWishlistBooks = getBooks();
+    setBooks(storedWishlistBooks);
+    setDisplayWishlist(storedWishlistBooks)
   }, []);
-  const handleFIlterRead = (filter) => {
-    if(filter === 'rating'){
-      const ratingFilter = readBooks.sort((a, b) => b.rating - a.rating);
-      setDisplayJob([...ratingFilter])
+  const handleFilterRead = (filter) => {
+    let filteredBooks = [...readBooks];
+    if (filter === 'rating') {
+      filteredBooks.sort((a, b) => b.rating - a.rating);
+    } else if (filter === 'pages') {
+      filteredBooks.sort((a, b) => b.totalPages - a.totalPages);
+    } else if (filter === 'year') {
+      filteredBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
     }
-    else if(filter === 'pages'){
-      const pagesByFilter = readBooks.sort((a, b) => b.totalPages - a.totalPages)
-      setDisplayJob([...pagesByFilter])
+    setDisplayJob(filteredBooks);
+  };
+
+  const handleFilterWishlist = (filter) => {
+    let filteredBooks = [...books];
+    if (filter === 'rating') {
+      filteredBooks.sort((a, b) => b.rating - a.rating);
+    } else if (filter === 'pages') {
+      filteredBooks.sort((a, b) => b.totalPages - a.totalPages);
+    } else if (filter === 'year') {
+      filteredBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
     }
-    else if(filter === 'year'){
-      const yearByFilter = readBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing)
-      setDisplayJob([...yearByFilter])
-    }
-  }
-  const handleFIlterWishlist = (filter) => {
-    if(filter === 'rating'){
-      const ratingFilter = books.sort((a, b) => b.rating - a.rating);
-      setDisplayJob([...ratingFilter])
-    }
-    else if(filter === 'pages'){
-      const pagesByFilter = books.sort((a, b) => b.totalPages - a.totalPages)
-      setDisplayJob([...pagesByFilter])
-    }
-    else if(filter === 'year'){
-      const yearByFilter = books.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing)
-      setDisplayJob([...yearByFilter])
-    }
-  }
+    setDisplayWishlist(filteredBooks);
+  };
 
 
 
@@ -61,21 +56,21 @@ export default function ListedBooks() {
           <summary className="m-1 btn bg-[#23BE0A] text-white hover:bg-[#23BE0A]">Sort By <IoIosArrowDown size={20}></IoIosArrowDown></summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li onClick={()=>{
-              handleFIlterRead('rating'),
-              handleFIlterWishlist('rating')
+              handleFilterRead('rating'),
+              handleFilterWishlist('rating')
             }
            }>
               <a>Rating</a>
             </li>
             <li onClick={()=>{
-              handleFIlterRead('pages')
-              handleFIlterWishlist('pages')
+              handleFilterRead('pages')
+              handleFilterWishlist('pages')
             }}>
               <a>Number of pages</a>
             </li>
             <li onClick={()=>{
-              handleFIlterRead('year')
-              handleFIlterWishlist('year')
+              handleFilterRead('year')
+              handleFilterWishlist('year')
             }}>
               <a>Published year</a>
             </li>
